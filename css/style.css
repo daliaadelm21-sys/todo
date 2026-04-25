@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+*{
+    font-family: "Tajawal", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    background: linear-gradient(123deg, #4A628A,#80C4E9);
+    height: 100vh;
+    padding: 70px 0;
+}
+.card{
+    background-color: #F3F3E0;
+    border-radius: 15px;
+    width: 40%;
+    margin: auto;
+    padding: 50px 30px;
+    border: 2px solid #f7f7f7;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+h1{
+    color: #4A628A;
+}
+img{
+    width: 40px;
+}
+.input-area{
+    display: flex;
+    justify-content: space-between;
+    background-color: #edeef0;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+input{
+    background: transparent;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+}
+button{
+    border: none;
+    background-color: #608BC1;
+    color: #F3F3E0;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+  
+}
+.warning{
+    padding-left: 30px;
+    color: #c70039;
+    display: none;
+}
+ul{
+   list-style-type: none;
+   margin-top: ;
+}
+li{
+    padding: 10px 40px;
+    position: relative;
+    color: #4A628A;
+    font-size: 18px;
+}
+li::before{
+    content:"" ;
+    width: 25px;
+    height: 25px;
+    background-image: url( /imgs/circle-1.png);
+    background-size: cover;
+    position: absolute;
+   
+    left: 5px;
+}
+li.checked{
+   color: #80C4E9;
+   text-decoration: line-through;
+}
+li.checked::before{
+    background-image: url(/imgs/check.png);
+}
+li span{
+    color: #c70039;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    border-radius: 50%;
+    padding: 7px 10px 5px 10px;
+    cursor: pointer;
+}
+li span:hover{
+    background-color: #F4D3D3;
+   
+}
