@@ -1,91 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
-*{
+
+* {
     font-family: "Tajawal", sans-serif;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
-.container{
-    background: linear-gradient(123deg, #4A628A,#80C4E9);
-    height: 100vh;
-    padding: 70px 0;
+
+.container {
+    background: linear-gradient(123deg, #4A628A, #80C4E9);
+    min-height: 100svh;
+    padding: clamp(20px, 6vw, 70px) 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
-.card{
+
+.card {
     background-color: #F3F3E0;
     border-radius: 15px;
-    width: 40%;
-    margin: auto;
-    padding: 50px 30px;
+    width: min(100%, 720px);
+    padding: clamp(20px, 5vw, 50px) clamp(16px, 4vw, 30px);
     border: 2px solid #f7f7f7;
 }
-.title{
+
+.title {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     margin-bottom: 30px;
+    text-align: center;
+    flex-wrap: wrap;
 }
-h1{
+
+h1 {
     color: #4A628A;
+    font-size: clamp(1.4rem, 3.6vw, 2.2rem);
 }
-img{
+
+img {
     width: 40px;
+    max-width: 100%;
 }
-.input-area{
+
+.input-area {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #edeef0;
     border-radius: 30px;
     margin-bottom: 20px;
+    gap: 8px;
 }
-input{
+
+input {
     background: transparent;
     padding: 10px 30px;
     border: none;
     outline: none;
+    flex: 1;
+    min-width: 0;
+    font-size: 1rem;
 }
-button{
+
+button {
     border: none;
     background-color: #608BC1;
     color: #F3F3E0;
     padding: 10px 20px;
     border-radius: 30px;
-    font-size: 18px;
+    font-size: clamp(1rem, 2.5vw, 18px);
     font-weight: 600;
-  
+    white-space: nowrap;
+    cursor: pointer;
 }
-.warning{
+
+.warning {
     padding-left: 30px;
     color: #c70039;
     display: none;
 }
-ul{
-   list-style-type: none;
-   margin-top: ;
+
+ul {
+    list-style-type: none;
+    margin-top: 6px;
 }
-li{
+
+li {
     padding: 10px 40px;
     position: relative;
     color: #4A628A;
-    font-size: 18px;
+    font-size: clamp(1rem, 2.4vw, 18px);
+    overflow-wrap: anywhere;
 }
-li::before{
-    content:"" ;
+
+li::before {
+    content: "";
     width: 25px;
     height: 25px;
-    background-image: url( /imgs/circle-1.png);
+    background-image: url(../imgs/circle-1.png);
     background-size: cover;
     position: absolute;
-   
+
     left: 5px;
 }
-li.checked{
-   color: #80C4E9;
-   text-decoration: line-through;
+
+li.checked {
+    color: #80C4E9;
+    text-decoration: line-through;
 }
-li.checked::before{
-    background-image: url(/imgs/check.png);
+
+li.checked::before {
+    background-image: url(../imgs/check.png);
 }
-li span{
+
+li span {
     color: #c70039;
     font-size: 18px;
     font-weight: bold;
@@ -95,7 +125,61 @@ li span{
     padding: 7px 10px 5px 10px;
     cursor: pointer;
 }
-li span:hover{
+
+li span:hover {
     background-color: #F4D3D3;
-   
+
+}
+
+@media (max-width: 768px) {
+    .container {
+        align-items: center;
+    }
+
+    .card {
+        border-radius: 12px;
+    }
+
+    .title {
+        margin-bottom: 20px;
+    }
+
+    img {
+        width: 34px;
+    }
+
+    li {
+        padding: 10px 34px;
+    }
+
+    li::before {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .input-area {
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 18px;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px 16px;
+    }
+
+    .warning {
+        padding-left: 6px;
+    }
+
+    li {
+        padding-right: 30px;
+    }
 }
