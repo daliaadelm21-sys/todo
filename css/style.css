@@ -13,13 +13,14 @@
     padding: clamp(20px, 6vw, 70px) 16px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .card {
     background-color: #F3F3E0;
     border-radius: 15px;
-    width: min(100%, 720px);
+    width: 100%;
+    max-width: 720px;
     padding: clamp(20px, 5vw, 50px) clamp(16px, 4vw, 30px);
     border: 2px solid #f7f7f7;
 }
@@ -52,11 +53,13 @@ img {
     border-radius: 30px;
     margin-bottom: 20px;
     gap: 8px;
+    width: 100%;
+    overflow: hidden;
 }
 
 input {
     background: transparent;
-    padding: 10px 30px;
+    padding: 10px 16px;
     border: none;
     outline: none;
     flex: 1;
@@ -74,6 +77,7 @@ button {
     font-weight: 600;
     white-space: nowrap;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .warning {
@@ -132,10 +136,6 @@ li span:hover {
 }
 
 @media (max-width: 768px) {
-    .container {
-        align-items: center;
-    }
-
     .card {
         border-radius: 12px;
     }
@@ -156,30 +156,97 @@ li span:hover {
         width: 22px;
         height: 22px;
     }
+
+    input {
+        padding: 10px 12px;
+    }
+
+    button {
+        padding: 10px 14px;
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 22px 12px;
+        align-items: flex-start;
+    }
+
+    .card {
+        padding: 22px 14px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.75);
+        box-shadow: 0 14px 28px rgba(32, 56, 95, 0.2);
+    }
+
+    .title {
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+        flex-wrap: nowrap;
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+        line-height: 1.2;
+        letter-spacing: 0.2px;
+    }
+
+    img {
+        width: 30px;
+        flex-shrink: 0;
+    }
+
     .input-area {
         flex-direction: column;
-        padding: 10px;
-        border-radius: 18px;
+        gap: 10px;
+        padding: 12px;
+        border-radius: 16px;
+        background-color: #f8f8f1;
+        border: 1px solid #d9deea;
     }
 
     input {
         width: 100%;
-        padding: 8px 10px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        background: #ffffff;
     }
 
     button {
         width: 100%;
-        padding: 10px 16px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-size: 1.05rem;
     }
 
     .warning {
         padding-left: 6px;
+        font-size: 0.92rem;
+        margin-top: 2px;
     }
 
     li {
-        padding-right: 30px;
+        padding: 12px 34px 12px 36px;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+
+    li span {
+        font-size: 17px;
+        padding: 6px 9px 4px 9px;
+    }
+}
+
+@media (max-width: 360px) {
+    .card {
+        padding: 18px 12px;
+    }
+
+    h1 {
+        font-size: 1.65rem;
     }
 }
